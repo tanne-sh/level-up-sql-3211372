@@ -19,3 +19,17 @@ PartySize INTEGER
 );
 
 DROP TABLE AnniversaryAttendees;
+
+SELECT Type, Name, Price, Description
+FROM Dishes 
+ORDER BY Price;
+
+SELECT Type, Name, Price, Description
+FROM Dishes 
+WHERE Type = 'Appetizer' OR Type = 'Beverage'
+ORDER BY Type;
+
+SELECT Type, Name, Price, Description
+FROM Dishes 
+WHERE Type != 'Beverage'
+ORDER BY Type;
