@@ -33,3 +33,4 @@ SELECT Type, Name, Price, Description
 FROM Dishes 
 WHERE Type != 'Beverage'
 ORDER BY Type;
+
