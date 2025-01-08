@@ -9,3 +9,13 @@ SELECT * FROM Customers;
 SELECT FirstName, LastName, Email
 FROM Customers
 ORDER BY LastName;
+CREATE TABLE AnniversaryAttendees (
+CustomerID INTEGER,
+PartySize INTEGER
+);
+CREATE TABLE AnniverAttend (
+CustomerID INTEGER,
+PartySize INTEGER
+);
+
+DROP TABLE AnniversaryAttendees;
