@@ -55,3 +55,16 @@ WHERE CustomerID = 26;
 SELECT *
 FROM Customers
 WHERE CustomerID = 26;
+
+SELECT * FROM Reservations
+JOIN Customers ON Reservations.CustomerID = Customers.CustomerID
+WHERE Customers.FirstName = 'Norby'
+AND Reservations.Date > '2022-07-24';
+
+DELETE FROM Reservations 
+WHERE ReservationID = '2000';
+
+-- or
+UPDATE Reservations
+SET Date = NULL WHERE ReservationID = 2000;
+
