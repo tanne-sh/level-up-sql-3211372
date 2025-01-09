@@ -40,3 +40,18 @@ VALUES ( 'Anna', 'Smith', 'asmith@samoca.org','479 Lapis Dr.',
 'Memphis', 'TN', '555) 555-1212', '1973-07-21');
 
 SELECT * FROM Customers ORDER BY CustomerID DESC;
+
+SELECT CustomerID, FirstName, LastName, Email, Address
+FROM Customers 
+WHERE FirstName = 'Taylor'
+AND LastName = 'Jenkins';
+
+UPDATE Customers
+SET Address = '74 Pine St.',
+    City = 'New York',
+    State = 'NY'
+WHERE CustomerID = 26;
+
+SELECT *
+FROM Customers
+WHERE CustomerID = 26;
