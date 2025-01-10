@@ -78,3 +78,14 @@ WHERE Email = 'atapley2j@kinetecoinc.com'), 4
 
 SELECT * FROM AnniverAttend;
 
+SELECT * FROM Customers;
+
+SELECT * FROM Reservations;
+
+SELECT Customers.FirstName, Customers.LastName, Reservations.Date,
+Reservations.PartySize
+FROM Reservations
+JOIN Customers ON Customers.CustomerID = Reservations.CustomerID
+WHERE Customers.LastName LIKE 'St%'
+AND PartySize = 4
+ORDER BY Reservations.Date DESC;
