@@ -68,3 +68,13 @@ WHERE ReservationID = '2000';
 UPDATE Reservations
 SET Date = NULL WHERE ReservationID = 2000;
 
+INSERT INTO AnniverAttend
+(CustomerID, PartySize)
+VALUES(
+(SELECT CustomerID
+FROM Customers
+WHERE Email = 'atapley2j@kinetecoinc.com'), 4
+);
+
+SELECT * FROM AnniverAttend;
+
