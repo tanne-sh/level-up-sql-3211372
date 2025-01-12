@@ -124,18 +124,19 @@ FROM Orders
 WHERE CustomerID = 70
 ORDER BY OrderDate DESC;
 
-INSERT INTO OrdersDishes (OrderId,DishId) VALUES
-(1001, (SELECT DishId FROM Dishes WHERE Name = 'House Salad')),
-(1001, (SELECT DishId FROM Dishes WHERE Name = 'Mini Cheeseburgers')),
-(1001, (SELECT DishId FROM Dishes WHERE Name = 'Tropical Blue Smoothie'));
+INSERT INTO OrdersDishes (OrderID,DishID) VALUES
+(1001, (SELECT DishID FROM Dishes WHERE Name = 'House Salad')),
+(1001, (SELECT DishID FROM Dishes WHERE Name = 'Mini Cheeseburgers')),
+(1001, (SELECT DishID FROM Dishes WHERE Name = 'Tropical Blue Smoothie'));
 
 SELECT *
 FROM Dishes
-JOIN OrdersDishes ON Dishes.DishId = OrdersDishes.DishId 
-WHERE OrdersDishes.DishId = 1001;
+JOIN OrdersDishes ON Dishes.DishID = OrdersDishes.DishID 
+WHERE OrdersDishes.DishID = 1001;
 
 SELECT SUM(Dishes.Price)
 FROM Dishes
-JOIN OrdersDishes ON Dishes.DishId = OrdersDishes.DishId
-WHERE OrdersDishes.OrderId = 1001;
+JOIN OrdersDishes ON Dishes.DishID = OrdersDishes.DishID
+WHERE OrdersDishes.OrderID = 1001;
 
+SELECT DishID
