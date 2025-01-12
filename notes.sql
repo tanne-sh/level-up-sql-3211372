@@ -159,3 +159,12 @@ WHERE CustomerID = 42;
 SELECT Customers.FirstName, Customers.LastName, Customers.FavoriteDish, Dishes.Name
 FROM Customers
 JOIN Dishes ON Customers.FavoriteDish = Dishes.DishID
+
+
+SELECT Count(Orders.orderID) as OrderCount, Customers.FirstName, 
+Customers.LastName, Customers.Email
+FROM Orders
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+GROUP BY Orders.CustomerID
+ORDER BY OrderCount DESC
+LIMIT 15;
