@@ -89,3 +89,25 @@ JOIN Customers ON Customers.CustomerID = Reservations.CustomerID
 WHERE Customers.LastName LIKE 'St%'
 AND PartySize = 4
 ORDER BY Reservations.Date DESC;
+
+SELECT * 
+FROM Customers
+WHERE Email = 'smac@kinetecoinc.com';
+
+INSERT INTO Customers
+(FirstName, LastName, Email, Phone) VALUES
+('Sam', 'McAdams', 'smac@kinetecoinc.com', '(555)-125-125-33');
+
+SELECT * 
+FROM Customers
+WHERE Email = 'smac@kinetecoinc.com';
+
+INSERT INTO Reservations
+(CustomerID, Date, PartySize) VALUES
+(102, '2022-08-12 18:00', 5);
+
+SELECT Customers.FirstName, Customers.LastName, Customers.Email, Reservations.Date, 
+Reservations.PartySize
+FROM Customers
+JOIN Reservations ON Customers.CustomerID = Reservations.CustomerID
+WHERE Email = 'smac@kinetecoinc.com';
