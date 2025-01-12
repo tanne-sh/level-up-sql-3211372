@@ -111,3 +111,31 @@ Reservations.PartySize
 FROM Customers
 JOIN Reservations ON Customers.CustomerID = Reservations.CustomerID
 WHERE Email = 'smac@kinetecoinc.com';
+
+SELECT CustomerID, FirstName, LastName, Phone
+FROM Customers
+WHERE Address = '6939 Elka Place' AND LastName = 'Hundey';
+
+INSERT INTO Orders (CustomerID, OrderDate)
+VALUES (70, '2022-09-22 14:00:00')
+
+SELECT *
+FROM Orders
+WHERE CustomerID = 70
+ORDER BY OrderDate DESC;
+
+INSERT INTO OrdersDishes (OrderId,DishId) VALUES
+(1001, (SELECT DishId FROM Dishes WHERE Name = 'House Salad')),
+(1001, (SELECT DishId FROM Dishes WHERE Name = 'Mini Cheeseburgers')),
+(1001, (SELECT DishId FROM Dishes WHERE Name = 'Tropical Blue Smoothie'));
+
+SELECT *
+FROM Dishes
+JOIN OrdersDishes ON Dishes.DishId = OrdersDishes.DishId 
+WHERE OrdersDishes.DishId = 1001;
+
+SELECT SUM(Dishes.Price)
+FROM Dishes
+JOIN OrdersDishes ON Dishes.DishId = OrdersDishes.DishId
+WHERE OrdersDishes.OrderId = 1001;
+
