@@ -64,3 +64,10 @@ WHERE PatronID = (
   SELECT PatronID
   FROM Patrons
   WHERE Email = 'jvaan@wisdompets.com');
+
+SELECT Loans.DueDate, Books.Title, Patrons.FirstName, Patrons.Email
+FROM Loans
+JOIN Books ON Loans.BookID = Books.BookID
+JOIN Patrons ON Loans.PatronID = Patrons.PatronID
+WHERE Loans.DueDate = '2022-07-13'
+AND Loans.ReturnedDate IS NULL;
